@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui@2.0.7/lib/index.js"></script>
+  <script src="../main.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <title>element-starter</title>
+</head>
+
+<body>
+  <div id="app">
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                   <el-form-item label="名字" prop="name">
+                       <el-input v-model="ruleForm.name"></el-input>
+                   </el-form-item>
+                   <el-form-item label="专业" prop="major">
+                       <el-select v-model="ruleForm.major" placeholder="请选择专业">
+                           <el-option label="专业一" value="1"></el-option>
+                           <el-option label="专业二" value="2"></el-option>
+                       </el-select>
+                   </el-form-item>
+
+                   <el-form-item label="级别" prop="level">
+                       <el-radio-group v-model="ruleForm.level">
+                           <el-radio label="Bac+1"></el-radio>
+                           <el-radio label="Bac+2"></el-radio>
+                           <el-radio label="Bac+3"></el-radio>
+                           <el-radio label="Bac+4"></el-radio>
+                           <el-radio label="Bac+5"></el-radio>
+                       </el-radio-group>
+                   </el-form-item>
+
+                   <el-form-item label="出生时间" required>
+                       <el-col :span="11">
+                           <el-form-item prop="birthdate">
+                               <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.birthdate" style="width: 100%;"></el-date-picker>
+                           </el-form-item>
+                       </el-col>
+                   </el-form-item>
+           <el-form-item>
+               <el-button type="primary" @click="submitForm('ruleForm')">确定</el-button>
+               <el-button @click="resetForm('ruleForm')">重置</el-button>
+           </el-form-item>
+               </el-form>
+  </div>
+</body>
+
+</html>
