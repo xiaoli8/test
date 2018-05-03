@@ -4,12 +4,15 @@
   "author": "yi.shyang@ele.me",
   "private": true,
   "scripts": {
+    "start": "npm run dev",
     "dev": "webpack-dev-server --inline --hot --env.dev",
     "build": "rimraf dist && webpack -p --progress --hide-modules"
   },
   "dependencies": {
     "element-ui": "^2.0.0",
-    "vue": "^2.5.2"
+    "material-design-icons-iconfont": "^3.0.3",
+    "vue": "^2.5.2",
+    "vuetify": "^1.0.17"
   },
   "engines": {
     "node": ">=6"
